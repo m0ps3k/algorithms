@@ -1,19 +1,10 @@
-using System.Diagnostics;
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections;
 
-namespace Algorithms.TContext;
-
-
-public class First
+class Program
 {
-    public static void Task()
-    {
-        byte a = 4;
-        byte b = (byte)(a + 70);
-        Console.WriteLine(b);
-    }
-
-    static void Main()
-    {
-        Task();
-    }
+        
 }
