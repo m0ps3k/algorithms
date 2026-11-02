@@ -1,0 +1,15 @@
+D:\Algorithms\debug_project\AlgoProj\bin\Debug\net10.0\AlgoProj.exe
+D:\Algorithms\debug_project\AlgoProj\bin\Debug\net10.0\AlgoProj.deps.json
+D:\Algorithms\debug_project\AlgoProj\bin\Debug\net10.0\AlgoProj.runtimeconfig.json
+D:\Algorithms\debug_project\AlgoProj\bin\Debug\net10.0\AlgoProj.dll
+D:\Algorithms\debug_project\AlgoProj\bin\Debug\net10.0\AlgoProj.pdb
+D:\Algorithms\debug_project\AlgoProj\obj\Debug\net10.0\AlgoProj.GeneratedMSBuildEditorConfig.editorconfig
+D:\Algorithms\debug_project\AlgoProj\obj\Debug\net10.0\AlgoProj.AssemblyInfoInputs.cache
+D:\Algorithms\debug_project\AlgoProj\obj\Debug\net10.0\AlgoProj.AssemblyInfo.cs
+D:\Algorithms\debug_project\AlgoProj\obj\Debug\net10.0\AlgoProj.csproj.CoreCompileInputs.cache
+D:\Algorithms\debug_project\AlgoProj\obj\Debug\net10.0\AlgoProj.sourcelink.json
+D:\Algorithms\debug_project\AlgoProj\obj\Debug\net10.0\AlgoProj.dll
+D:\Algorithms\debug_project\AlgoProj\obj\Debug\net10.0\refint\AlgoProj.dll
+D:\Algorithms\debug_project\AlgoProj\obj\Debug\net10.0\AlgoProj.pdb
+D:\Algorithms\debug_project\AlgoProj\obj\Debug\net10.0\AlgoProj.genruntimeconfig.cache
+D:\Algorithms\debug_project\AlgoProj\obj\Debug\net10.0\ref\AlgoProj.dll

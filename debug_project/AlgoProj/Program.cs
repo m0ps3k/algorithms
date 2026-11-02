@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Formats.Asn1;
 using System.Globalization;
+using System.Reflection.Metadata;
+using System.Reflection.PortableExecutable;
+using System.Runtime.CompilerServices;
 
 namespace Algorithms;
 
@@ -9,67 +12,70 @@ class SolutionClass
     static void Main()
     {
         Solution solution = new Solution();
-        ListNode n0 = new(1);
-        ListNode n1 = new(2);
-        ListNode n2 = new(3);
-        ListNode n3 = new(4);
-        ListNode n4 = new(5);
-        // Построение ссылок между узлами
-        n0.next = n1;
-        n1.next = n2;
-        n2.next = n3;
-        n3.next = n4;
-
-        ListNode see = n0;
-        while (see != null)
-        {
-            Console.Write($"{see.val} ");
-            if (see.next != null) Console.Write("=> ");
-            see = see.next;
-        }
-
-        var newHead = solution.ReverseList(n0);
-
-        Console.WriteLine();
-
-        while (newHead != null)
-        {
-            Console.Write($"{newHead.val} ");
-            if (newHead.next != null) Console.Write("=> ");
-            newHead = newHead.next;
-        }
-    }
-}
-
-
-public class ListNode
-{
-    public int val;
-    public ListNode next;
-    public ListNode(int val = 0, ListNode next = null)
-    {
-        this.val = val;
-        this.next = next;
+        Console.WriteLine(solution.IsAnagram("anagram", "nagaram")); //true
+        Console.WriteLine(solution.IsAnagram("rat", "car")); //false
     }
 }
 
 
 public class Solution
 {
-    public ListNode ReverseList(ListNode head)
+    public bool IsAnagram(string s, string t)
     {
-        ListNode prev = null;
-        ListNode current = head;
-        ListNode nxt = null;
-
-        while (current != null)
+        HashTable hashTable = new HashTable();
+        foreach (char i in s)
         {
-            nxt = current.next;
-            current.next = prev;
-            prev = current;
-            current = nxt;
+            hashTable.Add(i);
         }
-
-        return prev;
+        foreach (char i in t)
+        {
+            hashTable.Minus(i);
+        }
+        return hashTable.IsHashEmpty();
     }
 }
+
+public class HashTable
+{
+    int[] ints;
+
+    public HashTable()
+    {
+        ints = new int[26];
+        for (int i = 0; i < 26; i++)
+        {
+            ints[i] = 0;
+        }
+    }
+
+    public void Add(char a)
+    {
+        int index = HashFunc(a);
+        ints[index]++;
+    }
+
+    public void Minus(char a)
+    {
+        int index = HashFunc(a);
+        ints[index]--;
+    }
+
+    public bool IsHashEmpty()
+    {
+        foreach (var i in ints)
+        {
+            if (i != 0) return false;
+        }
+        return true;
+    }
+
+    public int HashFunc(char a)
+    {
+        // if (Char.IsUpper(a)) return (int)a - 65;
+        // else return (int)a - 71;
+        return (int)a - 'a';
+    }
+}
+
+
+// Dictionary<char, int> pairs = new Dictionary<char, int>();
