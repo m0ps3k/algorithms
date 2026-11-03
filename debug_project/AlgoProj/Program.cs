@@ -12,70 +12,29 @@ class SolutionClass
     static void Main()
     {
         Solution solution = new Solution();
-        Console.WriteLine(solution.IsAnagram("anagram", "nagaram")); //true
-        Console.WriteLine(solution.IsAnagram("rat", "car")); //false
+        Console.WriteLine(solution.SearchInsert([1, 3, 5, 6], 5)); //2
+        Console.WriteLine(solution.SearchInsert([1, 3, 5, 6], 2)); //1
+        Console.WriteLine(solution.SearchInsert([1, 3, 5, 6], 7)); //4
+        Console.WriteLine(solution.SearchInsert([1, 3, 5, 6], 0)); //0
     }
 }
 
 
 public class Solution
 {
-    public bool IsAnagram(string s, string t)
+    public int SearchInsert(int[] nums, int target)
     {
-        HashTable hashTable = new HashTable();
-        foreach (char i in s)
+        int i = 0;
+        int j = nums.Length - 1;
+        int med = 0;
+        while (i <= j)
         {
-            hashTable.Add(i);
+            med = (i + j) / 2;
+            if (nums[med] > target) j = med - 1;
+            else if (nums[med] < target) i = med + 1;
+            else return med;
         }
-        foreach (char i in t)
-        {
-            hashTable.Minus(i);
-        }
-        return hashTable.IsHashEmpty();
+        if (nums[med] > target) return med;
+        else return med + 1;
     }
 }
-
-public class HashTable
-{
-    int[] ints;
-
-    public HashTable()
-    {
-        ints = new int[26];
-        for (int i = 0; i < 26; i++)
-        {
-            ints[i] = 0;
-        }
-    }
-
-    public void Add(char a)
-    {
-        int index = HashFunc(a);
-        ints[index]++;
-    }
-
-    public void Minus(char a)
-    {
-        int index = HashFunc(a);
-        ints[index]--;
-    }
-
-    public bool IsHashEmpty()
-    {
-        foreach (var i in ints)
-        {
-            if (i != 0) return false;
-        }
-        return true;
-    }
-
-    public int HashFunc(char a)
-    {
-        // if (Char.IsUpper(a)) return (int)a - 65;
-        // else return (int)a - 71;
-        return (int)a - 'a';
-    }
-}
-
-
-// Dictionary<char, int> pairs = new Dictionary<char, int>();
