@@ -9,6 +9,7 @@ using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json.Serialization;
+using System.Xml;
 
 namespace Algorithms;
 
@@ -18,11 +19,14 @@ class SolutionClass
     {
         Solution solution = new Solution();
         TreeNodeHelper helper = new TreeNodeHelper();
-        TreeNode root = helper.CreateTreeNode([3, 9, 20, null, null, 15, 7]);
-        TreeNode root2 = helper.CreateTreeNode([1]);
-        TreeNode root3 = helper.CreateTreeNode([]);
-        TreeNode root4 = helper.CreateTreeNode([1, 2, 3, 4, 5, null, 7]);
-
+        TreeNode root5 = helper.CreateTreeNode([3, 1, 4, null, 2]);
+        TreeNode root6 = helper.CreateTreeNode([5, 3, 6, 2, 4, null, null, 1]);
+        TreeNode root7 = helper.CreateTreeNode([1]);
+        Console.WriteLine(solution.KthSmallest(root5, 1));
+        solution.count = 0;
+        Console.WriteLine(solution.KthSmallest(root6, 3));
+        solution.count = 0;
+        Console.WriteLine(solution.KthSmallest(root7, 1));
     }
 
     public class TreeNode
@@ -60,6 +64,22 @@ class SolutionClass
             }
             var result = CreateNode(ints);
             return result;
+        }
+    }
+
+
+    public class Solution
+    {
+        public int count = 0;
+
+        public int KthSmallest(TreeNode root, int k)
+        {
+            if (root == null) return 0;
+            int smallestLeft = KthSmallest(root.left, k);
+            count++;
+            if (k == count) return root.val;
+            if (smallestLeft != 0) return smallestLeft;
+            return KthSmallest(root.right, k);
         }
     }
 }

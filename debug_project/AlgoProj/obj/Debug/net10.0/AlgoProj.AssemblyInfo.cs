@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlgoProj")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+557ec8916879d44a99f5cebecff80347024f7330")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c122476081a804db42f0c5809d315807f68c15c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlgoProj")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlgoProj")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
