@@ -17,7 +17,7 @@ class SolutionClass
 {
     static void Main()
     {
-        // Solution solution = new Solution();
+        Solution solution = new Solution();
         TreeNodeHelper helper = new TreeNodeHelper();
         TreeNode root5 = helper.CreateTreeNode([3, 1, 4, null, 2]);
         TreeNode root6 = helper.CreateTreeNode([5, 3, 6, 2, 4, null, null, 1]);
