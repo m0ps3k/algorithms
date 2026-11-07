@@ -1,16 +1,6 @@
-﻿using System;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Formats.Asn1;
-using System.Globalization;
-using System.Net.Quic;
-using System.Reflection.Metadata;
-using System.Reflection.PortableExecutable;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text.Json.Serialization;
+﻿// namespace Algorithms;
 
-namespace Algorithms;
+using System;
 
 class SolutionClass
 {
@@ -22,6 +12,7 @@ class SolutionClass
         TreeNode root2 = helper.CreateTreeNode([1]);
         TreeNode root3 = helper.CreateTreeNode([]);
         TreeNode root4 = helper.CreateTreeNode([1, 2, 3, 4, 5, null, 7]);
+        Console.WriteLine("penis");
 
     }
 
